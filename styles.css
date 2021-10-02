@@ -12,7 +12,7 @@ button{
     transition: .5s;
 }
 button:hover{
-    transform: scale(1.1);
+    transform: scale(.9);
     cursor:pointer;
     background-color: lightgrey;
 }
