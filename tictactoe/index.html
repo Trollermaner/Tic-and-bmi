@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Tic-Tac-Toe</title>
+  <div class = "game-title">Tic-Tac-Toe</div>
+</head>
+
+<body>
+<div class = "youtube-embed" id = "youtubeEmbed">
+  <center><iframe class = "tutorialVideo" width="1280" height="720" src="https://www.youtube.com/embed/USEjXNCTvcc" title="How To Play Tic Tac Toe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+  <button id = "closeButton">Close Video</button> 
+</div>
+</div>
+  <div class = "wins" id = 'wins'>
+    <div class = "x-Wins" data-x>X Wins: 0</div>
+    <div class = "o-Wins" data-o>O Wins: 0</div>
+  </div>
+  <div class = "start-game show" id = "startGame">
+    <button id="startGameButton">Play</button>
+    <button  id="howToPlayButton">How To Play</button>
+    <button class="nav-link"><a href='../Homemenu.html'>Home Menu</a></button>
+  </div>
+  <div class="board" id="board">
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+  </div>
+  <div class="winning-message" id="winningMessage">
+    <div data-winning-message-text></div>
+    <button id="restartButton">New Game</button>
+  </div>
+  <div class = "return-menu" id="returnMenu">
+    <button id = "returnMenuButton">Menu</button>
+    <button id = "restartWinsButton">Reset Wins</button>
+  </div>
+</body>
+</html>

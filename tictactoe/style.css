@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;400&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  :root {
+    --cell-size: 200px;
+    --mark-size: calc(var(--cell-size) * .9);
+  }
+
+body{
+    margin: 0;
+}
+
+button{
+    transition: .3s;
+}
+
+
+.tutorialVideo{
+    display: flex;
+    background-color: rgba(0,0,0,.8);
+    justify-content: center;
+}
+.game-title{
+    text-align: center;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: 100px;
+    color: black;
+    z-index: 1;
+    background-color: white;
+   
+}
+.start-game{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8);
+    justify-content:center;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    flex-direction: column;
+    
+}
+.youtube-embed{
+    display: none;
+}
+.youtube-embed.show{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.youtube-embed button{
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-family: monospace, Arial;
+    margin-top: 20px;
+    margin-right: 40%;
+    margin-left: 40%;
+}
+.youtube-embed button:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+.howToPlay button{
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    font-family: monospace, Arial;
+    margin-bottom: 20px;
+    
+}
+.closeButton{
+    display: none;
+}
+
+.closeButton.show{
+    display: flex;
+    
+}
+.start-game.show{
+    display: flex;
+}
+.start-game button{
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    font-family: monospace, Arial;
+    margin-bottom: 20px;
+}
+.start-game button:hover{
+    background-color: grey;
+    
+}
+
+.wins{
+    display: none;
+}
+
+.return-menu{
+    display:none;
+}
+
+.return-menu.show{
+    display: flex;
+    
+}
+a:link{
+    color: black;
+    text-decoration: none;
+}
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+
+.return-menu button{
+    margin-left: 2%;
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-family: monospace, Arial;
+    float: left;
+    
+}
+.return-menu button:hover{
+    background-color: lightgrey;
+}
+
+.wins.show{
+    display: block;
+    flex-direction: column;
+    margin-left: 90%;
+    font-family: Arial;
+    font-size: 20px;
+    border: 3px solid black;
+    width: 6%;
+    text-align: center;
+}
+
+#restartWinsButton{
+    margin-left: 80%;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-family: monospace, Arial;
+}
+#restartWinsButton:hover{
+    background-color: lightgrey;
+}
+
+.board{
+    width: 100vw;
+    height: 75vh;
+    display: none;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto)
+}
+.board.show{
+    display: grid;
+}
+
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top:none;
+}
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7){
+    border-bottom:none;
+}
+.cell.x,
+.cell.circle{
+    cursor: default;
+}
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before{
+    background-color: black;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before
+{
+    background-color: rgb(216, 216, 216);
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    content:'';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+    
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    content:'';
+    position: absolute;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    border-radius: 50%;
+    
+}
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    width: var(--mark-size);
+    height: var(--mark-size);   
+}
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    width: calc(var(--mark-size)*.7);
+    height: calc(var(--mark-size)*.7);
+    background-color: white;
+}
+
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8);
+    justify-content:center;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winning-message button{
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.winning-message button:hover{
+    background-color: lightgrey;
+    
+}
+
+.winning-message.show{
+    display: flex;
+}
