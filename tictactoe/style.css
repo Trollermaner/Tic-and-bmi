@@ -16,6 +16,10 @@ button{
     transition: .3s;
 }
 
+button:hover{
+    transform: scale(.9);
+}
+
 
 .tutorialVideo{
     display: flex;
