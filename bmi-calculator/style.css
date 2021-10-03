@@ -6,7 +6,7 @@
     width: 25%;
     display: block;
     margin:auto;
-    margin-top: 10rem;
+    margin-top: 5rem;
     border-radius: 5px;
     font-weight: bold;
 }
@@ -45,7 +45,7 @@ button:hover{
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 500%;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
 }
 
 ::placeholder{
@@ -59,4 +59,39 @@ a.nav-link:link{
 a.nav-link:visited{
     color: black;
     text-decoration: none;
+}
+
+#changeBtn{
+    font-size: 175%
+}
+.imperial{
+    display: none;
+}
+.imperial.show{
+    display: flex;
+    flex-direction: column;
+}
+
+.feet-n-inches{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-left: 46.9rem;
+    margin-top: .5rem;
+    
+}
+
+.height-inches{
+    margin-left: 1rem;
+    width: 11rem;
+}
+.height-feet{
+    width: 11rem;    
+}
+.metric{
+    display: none;
+}
+.metric.show{
+    display: flex;
+    flex-direction: column;
 }
