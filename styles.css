@@ -1,4 +1,4 @@
-button{
+button.button{
     display: block;
     margin:auto;
     margin-top: 2.5%;
@@ -11,10 +11,35 @@ button{
     color: black;
     transition: .5s;
 }
-button:hover{
+button.button:hover{
     transform: scale(.9);
     cursor:pointer;
     background-color: lightgrey;
+}
+
+button.sound{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-top: 24rem;
+    width: 5rem;
+    height: 5rem;
+    float: left;
+    background-color: white;
+    transition: .5s;
+    
+}
+
+button.sound:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+img{
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    float: left;
+    
 }
 
 a.nav-link:link{
