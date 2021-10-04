@@ -10,6 +10,8 @@ button.button{
     font-weight: bold;
     color: black;
     transition: .5s;
+    z-index: 1;
+    
 }
 button.button:hover{
     transform: scale(.9);
@@ -21,14 +23,17 @@ button.sound{
     display: flex;
     flex-direction: column;
     border: none;
-    margin-top: 24rem;
+    margin-top: 23rem;
     width: 5rem;
     height: 5rem;
     float: left;
-    background-color: white;
+    background-color: transparent;
     transition: .5s;
     
+    
 }
+
+
 
 button.sound:hover{
     transform: scale(1.1);
@@ -38,11 +43,23 @@ img{
     display: block;
     width: 5rem;
     height: 5rem;
+    
+    
     float: left;
     user-select: none;
     
 }
 
+video{
+    position:absolute;
+    z-index: -5;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
 a.nav-link:link{
     color: black;
     text-decoration: none;
@@ -55,10 +72,26 @@ a.nav-link:visited{
 }
 header{
     text-align: center;
+    display: block;
+    margin:auto;
     margin-bottom: 10rem;
     font-size: 5rem;
+    color:white;
+    border: 5px solid black;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     user-select: none;
+    background-color: rgba(0,0,0,.7);
+    width: 40%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 5px;
+    
+}
+
+.background-video:after{
+    content:'';
+    background: rgba(0,0,0,.7);
+    z-index: 0;
 }
 
